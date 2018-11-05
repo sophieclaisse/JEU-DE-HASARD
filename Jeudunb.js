@@ -13,7 +13,7 @@ Random();
 document.getElementById("bouton").addEventListener("click", function (){
     var choixU = document.getElementById("choixU").value;
     nombreTest();
-   document.getElementById("Reponse").innerHTML= "Vous avez choisi le nombre"+" " + choixU;
+   document.getElementById("Reponse").innerHTML += choixU + " " + "-" + " ";
 
    if (choixOrdi<choixU){
     document.getElementById("Result").innerHTML= "Vous avez vu trop grand!";
@@ -34,7 +34,7 @@ document.getElementById("bouton").addEventListener("click", function (){
 
 
 function nombreTest () {
-    document.getElementById("nbEssai").innerHTML=  essai;
+    document.getElementById("nbEssai").innerHTML = "Nombre d'essais " + essai;
     essai++;
 
     if (essai > 10) {
@@ -46,6 +46,8 @@ function nombreTest () {
 document.getElementById("reset").addEventListener("click", function (){
     Random ();
     essai= 1;
+    choixU= 0;
+    document.getElementById("Reponse").innerHTML = "Vous avez choisi les nombres: ";
     nombreTest ();
 });
 
